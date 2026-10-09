@@ -1,81 +1,68 @@
-# Disease Prediction from Symptoms
+# 🏥 Disease Prediction from Symptoms Pipeline
 
-This project explores the use of machine learning algorithms to predict diseases from symptoms. 
+An end-to-end Machine Learning diagnostics system designed to evaluate patient symptom matrices and predict potential clinical conditions.
 
-### Algorithms Explored
+---
 
-The following algorithms have been explored in code:
+## 🧬 Project Overview & Core Metrics
 
-1. Naive Bayes
-2. Decision Tree
-3. Random Forest
-4. Gradient Boosting
+*   **Multi-Source Dataset Support:** Processes structured multi-label inputs from Kaggle alongside scraped text relational records from the Columbia University DBMI Knowledge Base.
+*   **Agnostic Predictive Engine:** Features a comparative benchmarking architecture testing probabilistic, tree-based, and gradient-boosted topologies.
+*   **Deterministic Feature Selection:** Standardizes 132 unique binary classification metrics to map deterministic patterns to target medical prognoses.
 
-# Dataset
+---
 
-### Source-1
+## 🛠️ Data Science & Modeling Tech Stack
 
-The dataset for this problem used with the `main.py` script is downloaded from here:
+*   **Runtime Environment:** Python 3.10+ (`requirements.txt` / Anaconda `environment.yml`)
+*   **Configuration & EDA:** `config.yaml`, Pandas, NumPy
+*   **Supervised Machine Learning:** Scikit-Learn
+*   **Workspace Notebooks:** Jupyter Ecosystem (`demo.ipynb`)
 
-```
-https://www.kaggle.com/kaushil268/disease-prediction-using-machine-learning
-```
+---
 
-This dataset has 133 total columns, 132 of them being symptoms experienced by patiend and last column in prognosis for the same.
+## 🤖 Machine Learning Algorithms Explored
 
-### Source-2
-The dataset for this problem used with the Jupyter notebook is downloaded from here: 
-```
-https://impact.dbmi.columbia.edu/~friedma/Projects/DiseaseSymptomKB/index.html
-```
+1.  **Naive Bayes Classifier:** Probabilistic baseline leveraging independent text token tracking.
+2.  **Decision Tree Classifiers:** Hierarchical clinical triage boundaries.
+3.  **Random Forest Ensemble:** Bootstrap aggregation across randomized trees.
+4.  **Gradient Boosting Systems:** Sequential weak decision learner layers.
 
-This dataset has 3 columns:
-```
-Disease  | Count of Disease Occurrence | Symptom
-```
+---
 
-You can either copy paste the whole table from here to an excel sheet or scrape it out using Beautifulsoup.
+## 📊 Dataset Ingestion & Directory Blueprint
 
-# Directory Structure
+*   **Kaggle Source:** 133 distinct relational metric features ([Kaggle Link](https://kaggle.com)).
+*   **Columbia University DBMI:** Unstructured text format mapping `Disease`, `Count`, and `Symptom` ([Columbia DBMI Link](https://columbia.edu)).
 
-```
-|_ dataset/
-         |_ training_data.csv
-         |_ test_data.csv
-
-|_ saved_model/
-         |_ [ pre-trained models ]
-
-|_ main.py [ code for laoding kaggle dataset, training & saving the model]
-
-|_ notebook/
-         |_ dataset/
-                  |_ raw_data.xlsx [Columbia dataset for notebook]
-         |_ Disease-Prediction-from-Symptoms-checkpoint.ipynb [ IPython Notebook for loading Columbia dataset, training model and Inference ]
+```text
+├── dataset/                  # Relational cross-validation data records
+├── notebook/                 # Prototyping workspace sandbox
+├── saved_model/              # Pre-trained production binaries
+├── config.yaml               # Runtime configurations
+├── demo.ipynb                # Interactive exploration
+├── infer.py                  # Standalone local evaluation
+├── main.py                   # Model pipeline execution loop
+└── requirements.txt          # Explicit pip framework dependency listing
 ```
 
-# Usage
+---
 
-Please make sure to install all dependencies before running the demo, using the following:
+## 🛠️ Installation & Reproduction Setup
 
-```
+```bash
+# Clone repository and install dependencies
+git clone https://github.com
+cd Disease-Prediction-from-Symptoms
 pip install -r requirements.txt
-```
 
-## Interactive Demo
-
-For running an interactive demo or sharing it with others, please run `demo.py` using Jupyter Notebook or Jupyter Lab.
-
-```
-jupyter notebook demo.ipynb
-```
-
-## Standalone Demo
-
-For running the inference on test set or on custom inputs, you can also use the `infr.py` file as follows:
-
-```
+# Run training and inference loops
+python main.py
 python infer.py
 ```
 
-**NOTE:** ***This project is for demo purposes only. For any symptoms/disease, please refer to a Doctor.***
+---
+
+## ⚠️ Medical & Operations Disclaimer
+This system is a technical portfolio proof-of-concept. All outputs represent statistical probabilities and must never replace professional clinical diagnosis.
+
